@@ -1,0 +1,42 @@
+<%= form_for(scheme) do |f| %>
+  <% if scheme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scheme.errors.count, "error") %> prohibited this scheme from being saved:</h2>
+
+      <ul>
+      <% scheme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payout_limit %>
+    <%= f.text_field :payout_limit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :excess %>
+    <%= f.text_field :excess %>
+  </div>
+
+  <div class="field">
+    <%= f.label :premium %>
+    <%= f.text_field :premium %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
